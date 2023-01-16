@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -26,7 +21,18 @@ namespace WindowsFormsApplication1
                 OpenFileDialog filePathDialog = new OpenFileDialog();   //Lager en ny "OpenFileDialog"
                 filePathDialog.Filter = "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff" +
                 "BMP|*.bmp|GIF|*.gif|JPG|*.jpg;*.jpeg|PNG|*.png|TIFF|*.tif;*.tiff|";        // Angi filtyper det skal være mulig å velge.
-                filePathDialog.Title = "Velg bilde";        //Legger til overskrift i FileDialog-vinduet
+                switch (CultureInfo.CurrentCulture.Name)
+                {
+                    case "en":
+                        filePathDialog.Title = Resources.en.Strings.txtSelectImage;
+                        break;
+                    case "no":
+                        filePathDialog.Title = Resources.Strings.txtSelectImage;
+                        break;
+                    default:
+                        filePathDialog.Title = Resources.en.Strings.txtSelectImage;
+                        break;
+                }
                 if (filePathDialog.ShowDialog() == DialogResult.OK)     //Viser filePathDialog-dialogboksen. Hvis lastingen av bilde var vellykket:
                 {
                     try     //(prøv) Gjør dette:

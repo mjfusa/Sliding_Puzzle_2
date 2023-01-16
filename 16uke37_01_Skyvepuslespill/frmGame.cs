@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -29,9 +24,20 @@ namespace WindowsFormsApplication1
         public frmGame(int size, Point missingPiece, string path)
         {
             InitializeComponent();
-
             CreatePieces(size, missingPiece, path);
-            this.Text = "Skyvepuslespill " + size + " x " + size;   //Legger til navn på vinduet.
+            switch (CultureInfo.CurrentCulture.Name)
+            {
+                case "en":
+                    this.Text = Resources.en.Strings.txtSlidingPuzzles + " " + size + " x " + size;   //Legger til navn på vinduet.
+                break;
+                case "no":
+                    this.Text = Resources.Strings.txtSlidingPuzzles + " " + size + " x " + size;   //Legger til navn på vinduet.
+                    break;
+                default:
+                    this.Text = Resources.en.Strings.txtSlidingPuzzles + " " + size + " x " + size;   //Legger til navn på vinduet.
+                break;
+            }
+
             txtCounter.Text = "0";      //Skriver 0 i txtCounter textboksen.
 
         }
@@ -419,6 +425,12 @@ namespace WindowsFormsApplication1
             Bitmap cropped = (Bitmap)original.Clone(partOfImage, original.PixelFormat);       //Clone-metoden til bildet blir brukt, og det lages et nytt bilde (castet til bitmap) der rektangelet som er laget brukes til å bestemme hvilken del av bildet som skal brukes.
 
             return cropped;     // Det beskjærte bildet returneres.
+        }
+
+        private void frmGame_Load(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }
