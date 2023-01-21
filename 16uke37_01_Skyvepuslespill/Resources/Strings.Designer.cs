@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Strings {
+    public class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace WindowsFormsApplication1.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WindowsFormsApplication1.Resources.Strings", typeof(Strings).Assembly);
@@ -51,7 +51,7 @@ namespace WindowsFormsApplication1.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,19 +61,65 @@ namespace WindowsFormsApplication1.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lukk vindu.
+        /// </summary>
+        public static string txtCloseWindow {
+            get {
+                return ResourceManager.GetString("txtCloseWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fortsett.
+        /// </summary>
+        public static string txtContinue {
+            get {
+                return ResourceManager.GetString("txtContinue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Antall trekk:.
+        /// </summary>
+        public static string txtNumberOfMoves {
+            get {
+                return ResourceManager.GetString("txtNumberOfMoves", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Velg bilde.
+        /// </summary>
+        public static string txtSelectImage {
+            get {
+                return ResourceManager.GetString("txtSelectImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Skyvepuslespill.
         /// </summary>
-        internal static string txtSlidingPuzzles {
+        public static string txtSlidingPuzzles {
             get {
                 return ResourceManager.GetString("txtSlidingPuzzles", resourceCulture);
             }
         }
-
-        internal static string txtSelectImage
-        {
-            get
-            {
-                return ResourceManager.GetString("txtSelectImage", resourceCulture);
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tid:.
+        /// </summary>
+        public static string txtTimeToSolve {
+            get {
+                return ResourceManager.GetString("txtTimeToSolve", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Du vant! .
+        /// </summary>
+        public static string txtYouWon {
+            get {
+                return ResourceManager.GetString("txtYouWon", resourceCulture);
             }
         }
     }

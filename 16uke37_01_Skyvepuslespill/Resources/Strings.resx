@@ -117,10 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtCloseWindow" xml:space="preserve">
+    <value>Lukk vindu</value>
+  </data>
+  <data name="txtContinue" xml:space="preserve">
+    <value>Fortsett</value>
+  </data>
+  <data name="txtNumberOfMoves" xml:space="preserve">
+    <value>Antall trekk:</value>
+  </data>
   <data name="txtSelectImage" xml:space="preserve">
     <value>Velg bilde</value>
   </data>
   <data name="txtSlidingPuzzles" xml:space="preserve">
     <value>Skyvepuslespill</value>
+  </data>
+  <data name="txtTimeToSolve" xml:space="preserve">
+    <value>tid:</value>
+  </data>
+  <data name="txtYouWon" xml:space="preserve">
+    <value>Du vant! </value>
   </data>
 </root>

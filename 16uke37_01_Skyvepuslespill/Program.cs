@@ -14,7 +14,7 @@ namespace WindowsFormsApplication1
         static void Main()
         {
 #if DEBUG
-            var culture = new CultureInfo("en");
+            var culture = new CultureInfo("no");
             Thread.CurrentThread.CurrentUICulture = culture;
             Thread.CurrentThread.CurrentCulture = culture;
 

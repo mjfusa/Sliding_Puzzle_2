@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Globalization;
+using System.Security.Policy;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -20,25 +21,43 @@ namespace WindowsFormsApplication1
         Random r = new Random();    // Tilfeldig tall.
         Bitmap usedPicture;         //Bildet som brukes.
         TimeSpan clock;             //Tid som er brukt.
+        string txtYouWon, txtNumberOfMoves, txtCloseWindow, txtTimeToSolve, txtContinue;
 
         public frmGame(int size, Point missingPiece, string path)
         {
             InitializeComponent();
             CreatePieces(size, missingPiece, path);
+
+            txtCounter.Text = "0";      //Skriver 0 i txtCounter textboksen.
+
             switch (CultureInfo.CurrentCulture.Name)
             {
                 case "en":
                     this.Text = Resources.en.Strings.txtSlidingPuzzles + " " + size + " x " + size;   //Legger til navn på vinduet.
-                break;
+                    txtCloseWindow = Resources.en.Strings.txtCloseWindow;
+                    txtYouWon = Resources.en.Strings.txtYouWon;
+                    txtNumberOfMoves = Resources.en.Strings.txtNumberOfMoves;
+                    txtTimeToSolve = Resources.en.Strings.txtTimeToSolve;
+                    txtContinue = Resources.en.Strings.txtContinue;
+                    break;
                 case "no":
                     this.Text = Resources.Strings.txtSlidingPuzzles + " " + size + " x " + size;   //Legger til navn på vinduet.
+                    txtCloseWindow = Resources.Strings.txtCloseWindow;
+                    txtYouWon = Resources.Strings.txtYouWon;
+                    txtNumberOfMoves = Resources.Strings.txtNumberOfMoves;
+                    txtTimeToSolve = Resources.Strings.txtTimeToSolve;
+                    txtContinue = Resources.Strings.txtContinue;
                     break;
                 default:
                     this.Text = Resources.en.Strings.txtSlidingPuzzles + " " + size + " x " + size;   //Legger til navn på vinduet.
-                break;
+                    txtCloseWindow = Resources.en.Strings.txtCloseWindow;
+                    txtYouWon = Resources.en.Strings.txtYouWon;
+                    txtNumberOfMoves = Resources.en.Strings.txtNumberOfMoves;
+                    txtTimeToSolve = Resources.en.Strings.txtTimeToSolve;
+                    txtContinue = Resources.en.Strings.txtContinue;
+                    break;
             }
 
-            txtCounter.Text = "0";      //Skriver 0 i txtCounter textboksen.
 
         }
 
@@ -152,8 +171,11 @@ namespace WindowsFormsApplication1
                 this.Controls.Add(newPiece);    //legger til brikken i spillet.
                 tmrSec.Stop();      //Klokken i spillet stoppes.
                 btnStart.BackColor = Color.LightGray;   //Hovedknappen blir grå.
-                btnStart.Text = "Lukk vindu";           //Hovedknappen endrer tekst.
-                MessageBox.Show("Du vant! \r\rTid:\t\t" + clock.ToString() + "\rAntall trekk:\t" + counter);    //Det kommer opp en "Du Vant"-tekstboks med linjeskift og tabulatortegn.
+                btnStart.Text = txtCloseWindow;          //Hovedknappen endrer tekst.
+                MessageBox.Show($"{txtYouWon} \r\r{txtTimeToSolve}\t\t" + clock.ToString() + $"\r{txtNumberOfMoves}\t" + counter);    //Det kommer opp en "Du Vant"-tekstboks med linjeskift og tabulatortegn.
+            
+            
+            
             }
         }
         
@@ -385,7 +407,7 @@ namespace WindowsFormsApplication1
                     
                     break;  // Break indikerer at "case 0" er ferdig
                 case 1:     // Startet --> spillet stoppes
-                    btnStart.Text = "Fortsett";     // Teksten på btnStart-Knappen settes til "fortsett"
+                    btnStart.Text = txtContinue;     // Teksten på btnStart-Knappen settes til "fortsett"
                     btnStart.BackColor = Color.LimeGreen;   // btnStart-Knappen blir grønn
                     tmrSec.Stop();          //Stopper timeren.
                     EventhandlerState(false);   //Fjerner eventhandlerne, slik at det ikke er mulig å flytte på brikkene.

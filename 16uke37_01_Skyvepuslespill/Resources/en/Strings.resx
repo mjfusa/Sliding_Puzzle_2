@@ -117,10 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtCloseWindow" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="txtContinue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="txtNumberOfMoves" xml:space="preserve">
+    <value>Number of moves:</value>
+  </data>
   <data name="txtSelectImage" xml:space="preserve">
     <value>Select Image</value>
   </data>
   <data name="txtSlidingPuzzles" xml:space="preserve">
     <value>Sliding Puzzles</value>
+  </data>
+  <data name="txtTimeToSolve" xml:space="preserve">
+    <value>time:</value>
+  </data>
+  <data name="txtYouWon" xml:space="preserve">
+    <value>You won!</value>
   </data>
 </root>

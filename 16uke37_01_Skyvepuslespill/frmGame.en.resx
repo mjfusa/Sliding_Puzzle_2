@@ -128,7 +128,7 @@
     <value>66, 24</value>
   </data>
   <data name="txtCounter2.Text" xml:space="preserve">
-    <value>Feature:</value>
+    <value>Moves:</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmGame</value>
